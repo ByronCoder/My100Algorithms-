@@ -2,8 +2,7 @@
 
 function almostIncreasingSequence(sequence: number[]): boolean {
     let count = 0;
-    let increasingSequence = false;
-
+    
     for (let i = 0; i < sequence.length; i++) {
        
         sequence[i] >= sequence[i+1] ? count++ : count;
