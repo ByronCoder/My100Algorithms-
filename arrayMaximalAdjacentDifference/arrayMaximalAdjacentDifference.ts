@@ -1,5 +1,31 @@
+//My solution
+
 function arrayMaximalAdjacentDifference(inputArray: number[]): number {
+     let biggestDifference = 0;
+
+    for (let i = 0; i < inputArray.length -1; i++) {
+        const difference =  Math.abs(inputArray[i] - inputArray[i+1]);
+        
+        biggestDifference = difference >  biggestDifference ? difference : biggestDifference;
+    }
+
+
+    return biggestDifference;
+    
 
 }
 
-console.log(arrayMaximalAdjacentDifference([2, 4, 1, 0]));
+//Dylan's solution
+function arrayMaximalAdjacentDifference2(inputArray: number[]): number {
+    let maxDiff = Math.abs(inputArray[0] - inputArray[1]);
+
+    for(let i = 0; i < inputArray.length; i++ ) {
+        let absoluteDiff = Math.abs(inputArray[i -1] - inputArray[i] )
+
+        maxDiff = absoluteDiff > maxDiff ? absoluteDiff : maxDiff;
+    }
+    return maxDiff
+
+}
+
+console.log(arrayMaximalAdjacentDifference([2, 53, 55, 98]));
